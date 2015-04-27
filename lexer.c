@@ -83,11 +83,29 @@ static void pbuffer()
    
    while(/*buffer[i] != '\0' ||*/ buffer[i] != '$')
    { 
-      printf("\n%c", buffer[i]);
+      printf("%c", buffer[i]);
       i++;
    }
    printf("\n --------- end of file text \n ");
 }
+
+
+/**********************************************************************/
+/* Display the buffer                                                 */
+/**********************************************************************/  
+/*static void lbuffer()
+{   
+   int i = 0;
+   printf("\n\n\n\n --------- lexbuf text \n ");
+   
+   
+   while(lexbuf[i] != '\0')
+   { 
+      printf("%c", lexbuf[i]);
+      i++;
+   }
+   printf("\n --------- end of lexbuf text \n ");
+}*/
 
 /**********************************************************************/
 /* Copy a character from the program buffer to the lexeme buffer      */
@@ -139,8 +157,8 @@ int get_token()
 	// om teknen är alfanumeriska ska de samtliga läsas in för att skapa en lexeme
 	while(isalnum(buffer[pbuf]))			{ get_char(); }
 	lexbuf[plex] = '\0';
-	return key2tok(lexbuf); // key2tok ska anropas här? // benji
-	
+	return key2tok(lexbuf); // key2tok ska anropas här? // benji //det ska den // käck
+	//return lexbuf;
 	
     
     

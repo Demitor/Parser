@@ -1,0 +1,115 @@
+
+ --------- file text 
+ 
+p
+r
+o
+g
+r
+a
+m
+ 
+x
+y
+z
+(
+i
+n
+p
+u
+t
+,
+ 
+o
+u
+t
+p
+u
+t
+)
+;
+
+
+v
+a
+r
+ 
+A
+,
+ 
+B
+,
+ 
+C
+:
+ 
+i
+n
+t
+e
+g
+e
+r
+;
+
+
+b
+e
+g
+i
+n
+
+
+A
+ 
+:
+=
+ 
+B
+ 
++
+ 
+C
+ 
+*
+ 
+2
+
+
+e
+n
+d
+.
+ --------- end of file text 
+ **** INNE I KEY2TOK ******
+ token is  268, lexeme is    program **** INNE I KEY2TOK ******
+ token is  258, lexeme is        xyz 
+ token is   40, lexeme is          ( **** INNE I KEY2TOK ******
+ token is  269, lexeme is      input 
+ token is   44, lexeme is          , **** INNE I KEY2TOK ******
+ token is  270, lexeme is     output 
+ token is   41, lexeme is          ) 
+ token is   59, lexeme is          ; **** INNE I KEY2TOK ******
+ token is  271, lexeme is        var **** INNE I KEY2TOK ******
+ token is  258, lexeme is          A 
+ token is   44, lexeme is          , **** INNE I KEY2TOK ******
+ token is  258, lexeme is          B 
+ token is   44, lexeme is          , **** INNE I KEY2TOK ******
+ token is  258, lexeme is          C 
+ token is   58, lexeme is          : **** INNE I KEY2TOK ******
+ token is  275, lexeme is    integer 
+ token is   59, lexeme is          ; **** INNE I KEY2TOK ******
+ token is  272, lexeme is      begin **** INNE I KEY2TOK ******
+ token is  258, lexeme is          A 
+ token is  260, lexeme is         := **** INNE I KEY2TOK ******
+ token is  258, lexeme is          B 
+ token is   43, lexeme is          + **** INNE I KEY2TOK ******
+ token is  258, lexeme is          C 
+ token is   42, lexeme is          * **** INNE I KEY2TOK ******
+ token is  258, lexeme is          2 **** INNE I KEY2TOK ******
+ token is  273, lexeme is        end 
+ token is   46, lexeme is          . 
+ token is   36, lexeme is          $ 
+
+
+ MVH BENJI

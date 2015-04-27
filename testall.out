@@ -1,0 +1,2187 @@
+testing tests/fun1.pas
+
+ *** In  parser
+ --------- file text 
+ program fun1(input, output);
+var A, B, A: integer;  
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/fun2.pas
+
+ *** In  parser
+ --------- file text 
+ program fun2(input, output);
+var A, B, C: integer;
+
+begin
+3A := B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/fun3.pas
+
+ *** In  parser
+ --------- file text 
+ program fun3(input, output);
+var A, B, C: integer;
+
+begin
+A :
+   = B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:   58
+ *** Unexpected Token: expected:  260 found:   58 (in match)
+ *** Expected: :=		 Found: :
+ --------In match expected:  258, found:   58
+ *** Unexpected Token: expected:  258 found:   58 (in match)
+ *** Expected: id		 Found: :
+ --------In match expected:   43, found:   58
+ *** Unexpected Token: expected:   43 found:   58 (in match)
+ *** Expected: +		 Found: :
+ --------In match expected:  258, found:   58
+ *** Unexpected Token: expected:  258 found:   58 (in match)
+ *** Expected: id		 Found: :
+ --------In match expected:   42, found:   58
+ *** Unexpected Token: expected:   42 found:   58 (in match)
+ *** Expected: *		 Found: :
+ --------In match expected:  258, found:   58
+ *** Unexpected Token: expected:  258 found:   58 (in match)
+ *** Expected: id		 Found: :
+ --------In match expected:  273, found:   58
+ *** Unexpected Token: expected:  273 found:   58 (in match)
+ *** Expected: end		 Found: :
+ --------In match expected:   46, found:   58
+ *** Unexpected Token: expected:   46 found:   58 (in match)
+ *** Expected: .		 Found: : 
+ Parse Failed! 
+testing tests/fun4.pas
+
+ *** In  parser
+ --------- file text 
+ program fun4(input, output);
+var A, B, C: integer;
+    D, E, F: integer;
+
+begin
+A := B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/fun5.pas
+
+ *** In  parser
+ --------- file text 
+ program fun5(input, output);
+var A, B, C: integer;
+
+begin
+A := B + C * 2
+end.
+
+OOOOPS!!!
+
+
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/sem1.pas
+
+ *** In  parser
+ --------- file text 
+ program sem1(input, output);
+var A, B, C: integer;
+
+begin
+A := D + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/sem2.pas
+
+ *** In  parser
+ --------- file text 
+ program sem2(input, output);
+var A, B, A: integer;
+
+begin
+A := B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/sem3.pas
+
+ *** In  parser
+ --------- file text 
+ program sem3(input, output);
+var A, B, C: double;
+
+begin
+A := B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:   59, found:  258
+ *** Unexpected Token: expected:   59 found:  258 (in match)
+ *** Expected: ;		 Found: id
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   59
+ *** Unexpected Token: expected:   58 found:   59 (in match)
+ *** Expected: :		 Found: ;
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/sem4.pas
+
+ *** In  parser
+ --------- file text 
+ program sem4(input, output);
+var A, B, C: integer;
+    D, E, F: real;
+
+begin
+F := B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  276, found:  276
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/sem5.pas
+
+ *** In  parser
+ --------- file text 
+ program sem5(input, output);
+var A, B, C: integer;
+    D, E, F: real;
+
+begin
+A := D + E * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  276, found:  276
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testa.pas
+
+ *** In  parser
+ --------- file text 
+ 
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:   36
+ *** Unexpected Token: expected:  268 found:   36 (in match)
+ *** Expected: program		 Found: $
+ --------In match expected:  258, found:   36
+ *** Unexpected Token: expected:  258 found:   36 (in match)
+ *** Expected: id		 Found: $
+ --------In match expected:   40, found:   36
+ *** Unexpected Token: expected:   40 found:   36 (in match)
+ *** Expected: (		 Found: $
+ --------In match expected:  269, found:   36
+ *** Unexpected Token: expected:  269 found:   36 (in match)
+ *** Expected: input		 Found: $
+ --------In match expected:   44, found:   36
+ *** Unexpected Token: expected:   44 found:   36 (in match)
+ *** Expected: ,		 Found: $
+ --------In match expected:  270, found:   36
+ *** Unexpected Token: expected:  270 found:   36 (in match)
+ *** Expected: output		 Found: $
+ --------In match expected:   41, found:   36
+ *** Unexpected Token: expected:   41 found:   36 (in match)
+ *** Expected: )		 Found: $
+ --------In match expected:   59, found:   36
+ *** Unexpected Token: expected:   59 found:   36 (in match)
+ *** Expected: ;		 Found: $
+ *** In  var_part
+ --------In match expected:  271, found:   36
+ *** Unexpected Token: expected:  271 found:   36 (in match)
+ *** Expected: var		 Found: $
+ --------In match expected:  258, found:   36
+ *** Unexpected Token: expected:  258 found:   36 (in match)
+ *** Expected: id		 Found: $
+ --------In match expected:   58, found:   36
+ *** Unexpected Token: expected:   58 found:   36 (in match)
+ *** Expected: :		 Found: $
+ --------In match expected:   59, found:   36
+ *** Unexpected Token: expected:   59 found:   36 (in match)
+ *** Expected: ;		 Found: $
+ *** In  stat_part
+ --------In match expected:  272, found:   36
+ *** Unexpected Token: expected:  272 found:   36 (in match)
+ *** Expected: begin		 Found: $
+ --------In match expected:  258, found:   36
+ *** Unexpected Token: expected:  258 found:   36 (in match)
+ *** Expected: id		 Found: $
+ --------In match expected:  260, found:   36
+ *** Unexpected Token: expected:  260 found:   36 (in match)
+ *** Expected: :=		 Found: $
+ --------In match expected:  258, found:   36
+ *** Unexpected Token: expected:  258 found:   36 (in match)
+ *** Expected: id		 Found: $
+ --------In match expected:   43, found:   36
+ *** Unexpected Token: expected:   43 found:   36 (in match)
+ *** Expected: +		 Found: $
+ --------In match expected:  258, found:   36
+ *** Unexpected Token: expected:  258 found:   36 (in match)
+ *** Expected: id		 Found: $
+ --------In match expected:   42, found:   36
+ *** Unexpected Token: expected:   42 found:   36 (in match)
+ *** Expected: *		 Found: $
+ --------In match expected:  258, found:   36
+ *** Unexpected Token: expected:  258 found:   36 (in match)
+ *** Expected: id		 Found: $
+ --------In match expected:  273, found:   36
+ *** Unexpected Token: expected:  273 found:   36 (in match)
+ *** Expected: end		 Found: $
+ --------In match expected:   46, found:   36
+ *** Unexpected Token: expected:   46 found:   36 (in match)
+ *** Expected: .		 Found: $ 
+ Parse Failed! 
+testing tests/testb.pas
+
+ *** In  parser
+ --------- file text 
+    testb(input, output);
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  258
+ *** Unexpected Token: expected:  268 found:  258 (in match)
+ *** Expected: program		 Found: id
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testc.pas
+
+ *** In  parser
+ --------- file text 
+ program (input, output);
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:   40
+ *** Unexpected Token: expected:  258 found:   40 (in match)
+ *** Expected: id		 Found: (
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testd.pas
+
+ *** In  parser
+ --------- file text 
+ program testd input, output);
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:  269
+ *** Unexpected Token: expected:   40 found:  269 (in match)
+ *** Expected: (		 Found: input
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/teste.pas
+
+ *** In  parser
+ --------- file text 
+ program teste ( , output);
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:   44
+ *** Unexpected Token: expected:  269 found:   44 (in match)
+ *** Expected: input		 Found: ,
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testf.pas
+
+ *** In  parser
+ --------- file text 
+ program testf (input  output);
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:  270
+ *** Unexpected Token: expected:   44 found:  270 (in match)
+ *** Expected: ,		 Found: output
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testg.pas
+
+ *** In  parser
+ --------- file text 
+ program testg (input, );
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:   41
+ *** Unexpected Token: expected:  270 found:   41 (in match)
+ *** Expected: output		 Found: )
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testh.pas
+
+ *** In  parser
+ --------- file text 
+ program testh (input, output ;
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   59
+ *** Unexpected Token: expected:   41 found:   59 (in match)
+ *** Expected: )		 Found: ;
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testi.pas
+
+ *** In  parser
+ --------- file text 
+ program testi (input, output) 
+var A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:  271
+ *** Unexpected Token: expected:   59 found:  271 (in match)
+ *** Expected: ;		 Found: var
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testj.pas
+
+ *** In  parser
+ --------- file text 
+ program testj (input, output);
+  A, B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  258
+ *** Unexpected Token: expected:  271 found:  258 (in match)
+ *** Expected: var		 Found: id
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testk.pas
+
+ *** In  parser
+ --------- file text 
+ program testk (input, output);
+var , B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:   44
+ *** Unexpected Token: expected:  258 found:   44 (in match)
+ *** Expected: id		 Found: ,
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testl.pas
+
+ *** In  parser
+ --------- file text 
+ program testl (input, output);
+var A  B, C: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:  258
+ *** Unexpected Token: expected:   58 found:  258 (in match)
+ *** Expected: :		 Found: id
+ --------In match expected:   59, found:  258
+ *** Unexpected Token: expected:   59 found:  258 (in match)
+ *** Expected: ;		 Found: id
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testm.pas
+
+ *** In  parser
+ --------- file text 
+ program testm (input, output);
+var A, B, C  integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:  275
+ *** Unexpected Token: expected:   58 found:  275 (in match)
+ *** Expected: :		 Found: integer
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testn.pas
+
+ *** In  parser
+ --------- file text 
+ program testn (input, output);
+var A, B, C: ;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testo.pas
+
+ *** In  parser
+ --------- file text 
+ program testo (input, output);
+var A, B, C: integer
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:  272
+ *** Unexpected Token: expected:   59 found:  272 (in match)
+ *** Expected: ;		 Found: begin
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testok1.pas
+
+ *** In  parser
+ --------- file text 
+ program testok1(input, output);  
+var A, B, C: integer;  
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testok2.pas
+
+ *** In  parser
+ --------- file text 
+ program testok2(input, output);
+var A, B, C: integer;  
+    D, E, F: integer;
+    G, H, I: integer;
+
+begin
+A := B + C * 2;
+D := E + F * 2;
+G := H + I * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testok3.pas
+
+ *** In  parser
+ --------- file text 
+ program testok3(input, output);
+var A, B, C: integer;  
+
+begin
+A := 2 + 6 * 8;
+B := 3 + 9 * 1;
+C := 4 + 1 * 1
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testok4.pas
+
+ *** In  parser
+ --------- file text 
+ program testok4(input, output);
+var A, B, C: integer;  
+    DD, EE, FF: integer;
+
+begin
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testok5.pas
+
+ *** In  parser
+ --------- file text 
+ program testok5(input, output);
+var x, y, z: integer;
+    A: integer;
+    B: integer;
+    C: integer;
+
+begin
+x := y + z * 2;
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testok6.pas
+
+ *** In  parser
+ --------- file text 
+ program testok6(input, output);
+var id, number, assign: integer;
+
+begin
+id := number + assign * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testok7.pas
+
+ *** In  parser
+ --------- file text 
+ program testok7(input, output);
+var
+    A: integer;
+    B: integer;
+    C: integer;
+
+begin
+A := B + C * 2
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Successful! 
+testing tests/testp.pas
+
+ *** In  parser
+ --------- file text 
+ program testp (input, output);
+var A, B, C: integer;
+
+
+A := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:  260
+ *** Unexpected Token: expected:   58 found:  260 (in match)
+ *** Expected: :		 Found: :=
+ --------In match expected:   59, found:  260
+ *** Unexpected Token: expected:   59 found:  260 (in match)
+ *** Expected: ;		 Found: :=
+ *** In  stat_part
+ --------In match expected:  272, found:  260
+ *** Unexpected Token: expected:  272 found:  260 (in match)
+ *** Expected: begin		 Found: :=
+ --------In match expected:  258, found:  260
+ *** Unexpected Token: expected:  258 found:  260 (in match)
+ *** Expected: id		 Found: :=
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testq.pas
+
+ *** In  parser
+ --------- file text 
+ program testq (input, output);
+var A, B, C: integer;
+
+begin
+ := B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  260
+ *** Unexpected Token: expected:  258 found:  260 (in match)
+ *** Expected: id		 Found: :=
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testr.pas
+
+ *** In  parser
+ --------- file text 
+ program testr (input, output);
+var A, B, C: integer;
+
+begin
+ A = B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:   61
+ *** Unexpected Token: expected:  260 found:   61 (in match)
+ *** Expected: :=		 Found: =
+ --------In match expected:  258, found:   61
+ *** Unexpected Token: expected:  258 found:   61 (in match)
+ *** Expected: id		 Found: =
+ --------In match expected:   43, found:   61
+ *** Unexpected Token: expected:   43 found:   61 (in match)
+ *** Expected: +		 Found: =
+ --------In match expected:  258, found:   61
+ *** Unexpected Token: expected:  258 found:   61 (in match)
+ *** Expected: id		 Found: =
+ --------In match expected:   42, found:   61
+ *** Unexpected Token: expected:   42 found:   61 (in match)
+ *** Expected: *		 Found: =
+ --------In match expected:  258, found:   61
+ *** Unexpected Token: expected:  258 found:   61 (in match)
+ *** Expected: id		 Found: =
+ --------In match expected:  273, found:   61
+ *** Unexpected Token: expected:  273 found:   61 (in match)
+ *** Expected: end		 Found: =
+ --------In match expected:   46, found:   61
+ *** Unexpected Token: expected:   46 found:   61 (in match)
+ *** Expected: .		 Found: = 
+ Parse Failed! 
+testing tests/tests.pas
+
+ *** In  parser
+ --------- file text 
+ program tests (input, output);
+var A, B, C: integer;
+
+begin
+ A : B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:   58
+ *** Unexpected Token: expected:  260 found:   58 (in match)
+ *** Expected: :=		 Found: :
+ --------In match expected:  258, found:   58
+ *** Unexpected Token: expected:  258 found:   58 (in match)
+ *** Expected: id		 Found: :
+ --------In match expected:   43, found:   58
+ *** Unexpected Token: expected:   43 found:   58 (in match)
+ *** Expected: +		 Found: :
+ --------In match expected:  258, found:   58
+ *** Unexpected Token: expected:  258 found:   58 (in match)
+ *** Expected: id		 Found: :
+ --------In match expected:   42, found:   58
+ *** Unexpected Token: expected:   42 found:   58 (in match)
+ *** Expected: *		 Found: :
+ --------In match expected:  258, found:   58
+ *** Unexpected Token: expected:  258 found:   58 (in match)
+ *** Expected: id		 Found: :
+ --------In match expected:  273, found:   58
+ *** Unexpected Token: expected:  273 found:   58 (in match)
+ *** Expected: end		 Found: :
+ --------In match expected:   46, found:   58
+ *** Unexpected Token: expected:   46 found:   58 (in match)
+ *** Expected: .		 Found: : 
+ Parse Failed! 
+testing tests/testt.pas
+
+ *** In  parser
+ --------- file text 
+ program testt (input, output);
+var A, B, C: integer;
+
+begin
+ A  B + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  258
+ *** Unexpected Token: expected:  260 found:  258 (in match)
+ *** Expected: :=		 Found: id
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testu.pas
+
+ *** In  parser
+ --------- file text 
+ program testu (input, output);
+var A, B, C: integer;
+
+begin
+ A := + C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:   43
+ *** Unexpected Token: expected:  258 found:   43 (in match)
+ *** Expected: id		 Found: +
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testv.pas
+
+ *** In  parser
+ --------- file text 
+ program testv (input, output);
+var A, B, C: integer;
+
+begin
+ A := B  C * 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:  258
+ *** Unexpected Token: expected:   43 found:  258 (in match)
+ *** Expected: +		 Found: id
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testw.pas
+
+ *** In  parser
+ --------- file text 
+ program testw (input, output);
+var A, B, C: integer;
+
+begin
+ A := B + C - 2  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   45
+ *** Unexpected Token: expected:   42 found:   45 (in match)
+ *** Expected: *		 Found: -
+ --------In match expected:  258, found:   45
+ *** Unexpected Token: expected:  258 found:   45 (in match)
+ *** Expected: id		 Found: -
+ --------In match expected:  273, found:   45
+ *** Unexpected Token: expected:  273 found:   45 (in match)
+ *** Expected: end		 Found: -
+ --------In match expected:   46, found:   45
+ *** Unexpected Token: expected:   46 found:   45 (in match)
+ *** Expected: .		 Found: - 
+ Parse Failed! 
+testing tests/testx.pas
+
+ *** In  parser
+ --------- file text 
+ program testx (input, output);
+var A, B, C: integer;
+
+begin
+ A := B + C * 2 ;  
+end.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:   59, found:   59
+ --------In match expected:  258, found:  273
+ *** Unexpected Token: expected:  258 found:  273 (in match)
+ *** Expected: id		 Found: end
+ --------In match expected:  260, found:  273
+ *** Unexpected Token: expected:  260 found:  273 (in match)
+ *** Expected: :=		 Found: end
+ --------In match expected:  258, found:  273
+ *** Unexpected Token: expected:  258 found:  273 (in match)
+ *** Expected: id		 Found: end
+ --------In match expected:   43, found:  273
+ *** Unexpected Token: expected:   43 found:  273 (in match)
+ *** Expected: +		 Found: end
+ --------In match expected:  258, found:  273
+ *** Unexpected Token: expected:  258 found:  273 (in match)
+ *** Expected: id		 Found: end
+ --------In match expected:   42, found:  273
+ *** Unexpected Token: expected:   42 found:  273 (in match)
+ *** Expected: *		 Found: end
+ --------In match expected:  258, found:  273
+ *** Unexpected Token: expected:  258 found:  273 (in match)
+ *** Expected: id		 Found: end
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testy.pas
+
+ *** In  parser
+ --------- file text 
+ program testy (input, output);
+var A, B, C: integer;
+
+begin
+ A := B + C * 2
+.
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:   46
+ *** Unexpected Token: expected:  273 found:   46 (in match)
+ *** Expected: end		 Found: .
+ --------In match expected:   46, found:   46 
+ Parse Failed! 
+testing tests/testz.pas
+
+ *** In  parser
+ --------- file text 
+ program testz (input, output);
+var A, B, C: integer;
+
+begin
+ A := B + C * 2
+end 
+
+ --------- end of file text 
+ 
+ *** In  program_header
+ --------In match expected:  268, found:  268
+ --------In match expected:  258, found:  258
+ --------In match expected:   40, found:   40
+ --------In match expected:  269, found:  269
+ --------In match expected:   44, found:   44
+ --------In match expected:  270, found:  270
+ --------In match expected:   41, found:   41
+ --------In match expected:   59, found:   59
+ *** In  var_part
+ --------In match expected:  271, found:  271
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   44, found:   44
+ --------In match expected:  258, found:  258
+ --------In match expected:   58, found:   58
+ --------In match expected:  275, found:  275
+ --------In match expected:   59, found:   59
+ *** In  stat_part
+ --------In match expected:  272, found:  272
+ --------In match expected:  258, found:  258
+ --------In match expected:  260, found:  260
+ --------In match expected:  258, found:  258
+ --------In match expected:   43, found:   43
+ --------In match expected:  258, found:  258
+ --------In match expected:   42, found:   42
+ --------In match expected:  258, found:  258
+ --------In match expected:  273, found:  273
+ --------In match expected:   46, found:   36
+ *** Unexpected Token: expected:   46 found:   36 (in match)
+ *** Expected: .		 Found: $ 
+ Parse Failed! 

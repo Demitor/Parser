@@ -59,6 +59,8 @@ static void match(int t)
       is_parse_ok=0;
       printf("\n *** Unexpected Token: expected: %4d found: %4d (in match)",
               t, lookahead);
+      printf("\n *** Expected: %s\t\t Found: %s", tok2lex(t), tok2lex(lookahead));
+      
       }
    }
 
@@ -71,7 +73,7 @@ void expr(){
    match('+');
    match(id);
    match('*');
-   match(number);
+   match(id);
 }
 void operand()	
 { 
@@ -107,7 +109,7 @@ void stat_part()
    match('.');
 }
 void id_list(){
-   match( id ); if (lookahead == ',') { match(',');   id_list(); }  
+   match( id ); if (lookahead == ',') { match(','); id_list(); }  
 }
 void type()	
 { 
@@ -145,7 +147,7 @@ static void program_header()
 
 int parser()
 {
-   if (DEBUG) printf("\n *** In  parser");
+   if (DEBUG){ printf("\n *** In  parser");}
    lookahead = get_token();       // get the first token
    program_header();               // call the first grammar rule
    var_part();                     // call the variable part
