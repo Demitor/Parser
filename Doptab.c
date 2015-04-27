@@ -36,6 +36,11 @@ int main()
    printf("\n - int  int  is %s ", tok2lex(get_otype('-', integer, integer)));
    printf("\n / int  int  is %s ", tok2lex(get_otype('/', integer, integer)));
 
+<<<<<<< HEAD
+=======
+   
+
+>>>>>>> 5d2f52e96458d03d51c9b62dbf3dfce636fe3119
    printf("\n\n");
    return 0;
    }

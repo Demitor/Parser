@@ -47,7 +47,11 @@ void p_optab()
    int i = 0;
    while(i < 7)
    {
+<<<<<<< HEAD
       printf("\n\t%s,\t\t%s,\t\t%s,\t\t%s", tok2lex(optab[i][0]), tok2lex(optab[i][1]), tok2lex(optab[i][2]), tok2lex(optab[i][3]));
+=======
+      printf("\n\t\t\t%s,\t\t%s,\t\t%s,\t\t%s", tok2lex(optab[i][0]), tok2lex(optab[i][1]), tok2lex(optab[i][2]), tok2lex(optab[i][3]));
+>>>>>>> 5d2f52e96458d03d51c9b62dbf3dfce636fe3119
       i++;
    }
    printf("\n________________________________________________________");
@@ -58,6 +62,7 @@ void p_optab()
 /**********************************************************************/
 int get_otype(int op, int arg1, int arg2)
 {  
+<<<<<<< HEAD
    int i = 0;
    while(i < 7)
    {
@@ -75,6 +80,10 @@ int get_otype(int op, int arg1, int arg2)
    }
    //printf("\n*** RETURNING: %s\t%s\t%s\t%s", tok2lex(optab[8][0]), tok2lex(optab[8][1]), tok2lex(optab[8][2]), tok2lex(optab[8][3]));
    return optab[8][3];
+=======
+   printf("*** TO BE DONE!");
+   return 0;
+>>>>>>> 5d2f52e96458d03d51c9b62dbf3dfce636fe3119
 }
 
 /**********************************************************************/

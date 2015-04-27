@@ -74,14 +74,22 @@ static tab keywordtab[ ] = {
 /**********************************************************************/
 void p_toktab()
 {  
+<<<<<<< HEAD
 	
+=======
+	printf("KEYWORDS");
+>>>>>>> 5d2f52e96458d03d51c9b62dbf3dfce636fe3119
    int i = 0;
    do{
    	printf("*** %s %i \n",keywordtab[i].text,keywordtab[i].token);	
    	i++;
    } while(keywordtab[i].token!=nfound);
   
+<<<<<<< HEAD
    
+=======
+   printf("TOKENS");
+>>>>>>> 5d2f52e96458d03d51c9b62dbf3dfce636fe3119
    i = 0;
    do{
    	printf("*** %s %i \n", tokentab[i].text,tokentab[i].token);
